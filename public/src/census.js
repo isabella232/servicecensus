@@ -1,28 +1,5 @@
 $(document).ready(function($) {
 
-  // Only one popover visible
-  // Adapted from http://stackoverflow.com/a/12119747/114462
-  var $visiblePopover;
-
-  $('body').on('click', 'td.showpopover', function() {
-    var $this = $(this);
-
-    // check if the one clicked is now shown
-    if ($this.data('popover').tip().hasClass('in')) {
-
-      // if another was showing, hide it
-      if ($visiblePopover) {
-        $visiblePopover.popover('hide');
-      }
-
-      // then store reference to current popover
-      $visiblePopover = $this;
-
-    } else { // if it was hidden, then nothing must be showing
-      $visiblePopover = '';
-    }
-  });
-
   var summaryTable = function(table, data) {
     // do gradient on score
     $(table).find('.placescore').each(function(idx, td) {
@@ -37,18 +14,6 @@ $(document).ready(function($) {
       if (typeof data.byplace[$tr.data('place')] != 'undefined') {
         var record = data.byplace[$tr.data('place')].datasets[$td.data('dataset')];
         var datasetTitle = $td.data('datasettitle');
-        $td.popover({
-          html: true,
-          placement: 'bottom',
-          container: 'body',
-          title: function(e){
-            title = '<strong>' + datasetTitle + '</strong> in <strong>' + $tr.data('placename') + '</strong>';
-            return title;
-          },
-          content: function(){
-            return OpenDataCensus.popoverBody(record);
-          }
-        });
       }
     });
 
