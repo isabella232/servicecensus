@@ -19,4 +19,18 @@
       {% endfor %}
     </ul>
   </td>
+  {% if record and record.url %}
+    <td class="recordurl">
+        <a href="{{record.url}}" title="{{record.url}}" target="_blank">{{record.url }}</a>
+    </td>
+    {% else %}
+    <td><!-- No URL given --></td>
+    {% endif %}
+    {% if record and record.details %}
+    <td class="recorddetails">
+        {{ record.details }}
+    </td>
+    {% else %}
+    <td></td>
+    {% endif %}
 {%- endmacro  %}
