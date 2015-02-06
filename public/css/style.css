@@ -993,7 +993,7 @@ td.dependant {width:924px !important;}/*Setting the width of column 3.*/
 }
 
 .submission-question, .submission-option, .submission-current,
-.submission-info, .submission-dependant {
+.submission-info, .submission-dependant, .submission-field {
     float: left;
     min-height: 72px;
     padding-top: 2em;
@@ -1013,6 +1013,11 @@ td.dependant {width:924px !important;}/*Setting the width of column 3.*/
 .submission-question {
     width: 24%;
     padding-left: 1%;
+}
+
+.submission-field {
+	width: 24%;
+	padding-left: 1%;
 }
 
 .submission-label {

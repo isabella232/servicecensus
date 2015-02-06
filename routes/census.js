@@ -15,7 +15,6 @@ exports.submit = function(req, res) {
   if (requireLoggedIn(req, res)) return;
 
   var datasets = [];
-  var ynquestions = model.data.questions.slice(0,9);
   var prefill = req.query;
   var year = prefill.year || config.get('submit_year');
   var submissionData = req.body,
@@ -29,7 +28,6 @@ exports.submit = function(req, res) {
             canReview: true, // flag always on for submission
             submitInstructions: config.get('submit_page', req.locale),
             places: util.translateRows(model.data.places, req.locale),
-            ynquestions: util.translateQuestions(ynquestions, req.locale),
             questions: util.translateQuestions(model.data.questions, req.locale),
             questionsById: util.translateObject(model.data.questionsById, req.locale),
             datasets: util.markupRows(util.translateRows(model.data.datasets, req.locale)),
