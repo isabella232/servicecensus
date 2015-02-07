@@ -21,13 +21,13 @@
 
 <p>{{dataset.description|marked}}</p>
 
-<h3>{{gettext("Data Location")}}</h3>
+<h3>{{gettext("Link")}}</h3>
 <a href="{{prefill.url}}">{{prefill.url}}</a>
 
 <h3>{{gettext("Comments")}}</h3>
 <p>{{prefill.details|marked|urlize}}</p>
 
-<h3>{{gettext("Data Availability")}}</h3>
+<h3>{{gettext("Service Availability")}}</h3>
 <ul class="data-availability clearfix unstyled">
   {% for qu in scoredQuestions %}
     {% set state = prefill[qu.id] %}

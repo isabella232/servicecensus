@@ -31,7 +31,7 @@
 <form action="" method="POST" class="form submission-create" autocomplete="on">
 
 <fieldset>
-  <h3>{{gettext("Place and Dataset")}}</h3>
+  <h3>{{gettext("Place and Services")}}</h3>
   <div class="row">
     <div class="span4">
       <label>{{gettext("Place")}}<br/>
@@ -44,7 +44,7 @@
       </label>
     </div>
     <div class="span4">
-      <label>{{gettext("Dataset")}}<br/>
+      <label>{{gettext("Service")}}<br/>
         <select name="dataset" id="dataset-select" required>
           <option value="">{{gettext("Please select")}}</option>
           {% for dataset in datasets %}

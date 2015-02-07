@@ -2,14 +2,14 @@
 {% include '_snippets/entry-summary-row.html' %}
 
 {% block title %}
-{{dataset.title}} &mdash; {{gettext("Datasets")}}
+{{dataset.title}} &mdash; {{gettext("Services")}}
 {% endblock %}
 
 {% block content %}
 
 <h1>
   <a href="{{urlFor('overview')}}" data-toggle="tooltip" class="count-0"
-    title="Return to results overview">{{gettext("Datasets")}}</a> / {{ dataset.title }}
+    title="Return to results overview">{{gettext("Services")}}</a> / {{ dataset.title }}
 
     <span class="pull-right">
       {% include '_snippets/share_page_buttons.html' %}
@@ -22,10 +22,8 @@
           <div class="tab-pane active" id="table-overview">
             <div class="table">
 
-<p>{{format("On this page you can see the state of open data for %(dataset)s in all the places for which we have information.", { dataset: dataset.title}) }}</p>
-
 {% if dataset.description %}
-  <h3>{{gettext("Dataset Description")}}</h3>
+  <h3>{{gettext("Service Description")}}</h3>
   {{dataset.description}}
 {% endif %}
 
