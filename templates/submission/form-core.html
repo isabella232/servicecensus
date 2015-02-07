@@ -72,10 +72,9 @@
                         {{ qu.question }}
                     </div>
                     <div class="submission-field">
-                        <input type="{{qu.type}}" title="{{qu.placeholder}}" name="{{qu.id}}" value="{% if formData %}{{formData[qu.id]}}{% else %}{{prefill[qu.id]}}{% endif %}" {% if canReview != true or reviewClosed %}disabled="disabled"{% endif %} placeholder="{{qu.placeholder}}" {% if qu.id=='format' %} list="formats" {% endif %} />
+                        <input type="{{qu.type}}" title="{{qu.placeholder}}" name="{{qu.id}}" value="{% if formData %}{{formData[qu.id]}}{% else %}{{prefill[qu.id]}}{% endif %}" {% if canReview != true or reviewClosed %}disabled="disabled"{% endif %} {% if currrecord[qu.id] %} } placeholder="{{currrecord[qu.id]}}" {% else %} placeholder="{{ qu.placeholder }}" {% endif %} {% if qu.id=='format' %} list="formats" {% endif %} />
                     </div>
                     <div class="submission-current">
-                       {{ currrecord[qu.id] or gettext('No entry') }}
                     </div>
                     <div class="submission-info">
                         <span class="help-block readmore">{{qu.description|marked}}</span>
