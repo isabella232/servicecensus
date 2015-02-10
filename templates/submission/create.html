@@ -22,11 +22,8 @@
 </div>
 {% endif %}
 
-{% if submitInstructions %}
-<div class="alert alert-warning">
-  {{ submitInstructions }}
+<div id="question-instructions" class="alert alert-success">
 </div>
-{% endif %}
 
 <form action="" method="POST" class="form submission-create" autocomplete="on">
 
@@ -83,4 +80,20 @@
 
 
 <script src="/src/common.js"></script>
+<script>
+
+{% for dataset in datasets %}
+  if ($("#dataset-select").val() == "{{dataset.id}}"){
+    $("#question-instructions").html("{{ dataset.long_description | replace('\n','')}}");
+  }
+{% endfor %}
+$("#dataset-select").change(function(e){
+  console.log($("#dataset-select").val());
+  {% for dataset in datasets %}
+    if ($("#dataset-select").val() == "{{dataset.id}}"){
+      $("#question-instructions").html("{{ dataset.long_description | replace('\n','')}}");
+    }
+  {% endfor %}
+})
+</script>
 {% endblock %}
