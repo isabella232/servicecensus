@@ -103,9 +103,12 @@ app.all('*', function(req, res, next) {
   if (config.get('test:testing') === true && !req.user && config.get('test:user')) {
     req.user = config.get('test:user');
   }
-  if (req.cookies.lang) {
-    req.locale = req.cookies.lang;
+  if (req.cookies) {
+    if (req.cookies.lang) {
+      req.locale = req.cookies.lang;
+    }
   }
+
   res.locals.currentUser = req.user ? req.user : null;
 
   if (config.get('appconfig:readonly')) {
