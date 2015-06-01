@@ -24,7 +24,8 @@
     "passport-google-oauth": "",
     "i18n-abide": "~0.0.22",
     "moment": "~2.5.1",
-    "express-validator": ""
+    "express-validator": "",
+    "google-auth-library" : ""
   },
   "devDependencies": {
     "chai": "^1.9.2",
