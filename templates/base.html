@@ -103,32 +103,9 @@
         </p>
         {% endif %}
         <p>
-        <a href="http://opendefinition.org/ossd/" title="{{gettext("Open Online Software Service")}}" style="border:none;">
-            <img src="//assets.okfn.org/images/ok_buttons/os_80x15_orange_grey.png" alt="" border="" />
-          </a>
-          <a href="http://opendefinition.org/okd/" title="{{gettext("Open Definition")}}" style="border:none;">
-            <img src="//assets.okfn.org/images/ok_buttons/oc_80x15_blue.png" alt="" border="" />
-          </a>
-          <a href="http://opendefinition.org/okd/" title="{{gettext("Open Definition")}}" style="border:none;">
-            <img src="//assets.okfn.org/images/ok_buttons/od_80x15_blue.png" alt="" border="" />
-          </a>
-          |
-          <a href="http://opendatacommons.org/licenses/pddl/1.0">{{gettext("Data License (Public Domain)")}}</a>
-          |
-          <a href="https://github.com/okfn/opendatacensus/">{{gettext("Source code")}}</a>
-        </p>
-        <p>
           <a href="/api/entries.csv">{{gettext("Download Data (CSV)")}}</a>
           |
           <a href="/api/entries.json">{{gettext("Download Data (JSON)")}}</a>
-        </p>
-        <p>
-        {{gettext("Part of the <a href=\"http://census.okfn.org/\">Open Data Census project</a> run by Open Knowledge.")}}
-        </p>
-        <p>
-          <a class="okf-footer-logo" href="http://okfn.org/" title="{{gettext("An Open Knowledge Project")}}" target="_blank">
-            <img src="//assets.okfn.org/p/okfn/img/okfn-logo-landscape-black-s.png" alt="Open Knowledge logo" />
-          </a>
         </p>
       </div>
       <div class="span3">
@@ -141,36 +118,10 @@
             <a href="/login">{{gettext("Login")}}</a>
             {% endif %}
           </li>
-          <li><a href="http://okfn.org/opendata/" title="{{gettext("More about Open Data")}}">{{gettext("What is Open Data")}}</a></li>
-          <li><a href="http://meta.census.okfn.org/">{{gettext("Run Your Own<br />Local Open Data Census")}}</a></li>
         </ul>
       </div>
     </div>
   </div>
 </footer>
-{% if google_analytics_key %}
-<!-- configured goolge analytics specific to this deployment -->
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{google_analytics_key}}']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-{% endif %}
-<!-- common tracking code for all -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-33874954-24', 'okfn.org');
-  ga('send', 'pageview');
-</script>
 </body>
 </html>
